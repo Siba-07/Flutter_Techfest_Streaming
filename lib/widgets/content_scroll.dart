@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+
+class ContentScroll extends StatefulWidget {
+  final List<String> images;
+  final String title;
+  final double imageHeight;
+  final double imageWidth;
+
+  ContentScroll({
+    this.images,
+    this.title,
+    this.imageHeight,
+    this.imageWidth,
+  });
+
+  @override
+  _ContentScrollState createState() => _ContentScrollState();
+}
+
+class _ContentScrollState extends State<ContentScroll> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                widget.title,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              GestureDetector(
+                onTap: () => print('View ${widget.title}'),
+                child: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                  size: 30.0,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          height: widget.imageHeight,
+          child: ListView.builder(
+            padding: EdgeInsets.symmetric(horizontal: 30.0),
+            scrollDirection: Axis.horizontal,
+            itemCount: widget.images.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: 10.0,
+                  vertical: 20.0,
+                ),
+                width: widget.imageWidth,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: RaisedButton(
+                  onPressed: () { print(index); },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    child: Image(
+                      image: AssetImage(widget.images[index]),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
