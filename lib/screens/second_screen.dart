@@ -41,7 +41,9 @@ class _VideoListState extends State<VideoList> {
         elevation: 0.0,
         title: Center(
           child: Image(
-            image: AssetImage('assets/images/netflix_logo.png'),
+            image: AssetImage('assets/images/techfest_logo.jpg'),
+            height:100.0,
+            width: 200.0,
 
           ),
         ),

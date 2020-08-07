@@ -22,34 +22,41 @@ class _ContentScrollState extends State<ContentScroll> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text(
-                widget.title,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              GestureDetector(
-                onTap: () => print('View ${widget.title}'),
-                child: Icon(
-                  Icons.arrow_forward,
-                  color: Colors.black,
-                  size: 30.0,
-                ),
-              ),
-            ],
-          ),
+        // Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 40.0),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: <Widget>[
+        //       Text(
+        //         widget.title,
+        //         style: TextStyle(
+        //           fontSize: 30.0,
+        //           color: Colors.white,
+        //           fontWeight: FontWeight.w600,
+        //         ),
+        //       ),
+        //       GestureDetector(
+        //         onTap: () => print('View ${widget.title}'),
+        //         child: Icon(
+        //           Icons.arrow_forward,
+        //           color: Colors.black,
+        //           size: 30.0,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        
+        Text(
+            "POPULAR VIDEOS",
+            textAlign: TextAlign.left,
+            style: new TextStyle(fontSize: 20.0, color: Colors.white),
         ),
+        
         Container(
           height: widget.imageHeight,
           child: ListView.builder(
-            padding: EdgeInsets.symmetric(horizontal: 30.0),
+            //padding: EdgeInsets.symmetric(horizontal: 30.0),
             scrollDirection: Axis.horizontal,
             itemCount: widget.images.length,
             itemBuilder: (BuildContext context, int index) {

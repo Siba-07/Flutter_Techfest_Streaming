@@ -42,9 +42,11 @@ class HomeScreen extends StatefulWidget {
 
 
 class _HomeScreenState extends State<HomeScreen> {
-  
+
+  static String videoId = YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=Tz_FGheIDeQ");
   YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'iLnmTe5Q2Qw',
+    
+    initialVideoId: videoId,
     flags: YoutubePlayerFlags(
         autoPlay: false,
     ),
@@ -61,8 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 0.0,
           title: Center(
             child: Image(
-              image: AssetImage('assets/images/netflix_logo.png'),
-
+              image: AssetImage('assets/images/techfest_logo.jpg'),
+              height: 100.0,
+              width: 200.0,
             ),
           ),
           leading: IconButton(
@@ -97,38 +100,39 @@ class _HomeScreenState extends State<HomeScreen> {
                 FullScreenButton(),
               ],
             ),
-            SizedBox(height: 20.0),
-            ContentScroll(
-              images: myList,
-              title: 'Online Lectures 2020-21',
-              imageHeight: 150.0,
-              imageWidth: 250.0,
+            SizedBox(height: 10.0,),
+            Text(
+              "Welcome to Youtube video 1",
+              textAlign: TextAlign.center,
+              style: new TextStyle(fontSize: 20.0, color: Colors.white),
             ),
-            SizedBox(height: 10.0),
+            SizedBox(height: 20.0),
+            // ContentScroll(
+            //   images: myList,
+            //   title: 'Online Lectures 2020-21',
+            //   imageHeight: 150.0,
+            //   imageWidth: 250.0,
+            // ),
+            // SizedBox(height: 10.0),
             ContentScroll(
               images: popular,
-              title: 'Popular',
+              title: 'POPULAR',
               imageHeight: 150.0,
               imageWidth: 250.0,
             ),
-            RaisedButton(
-              elevation: 0,
-              onPressed: () => Navigator.push(
+            Container(
+              alignment: Alignment.center,
+              child: RaisedButton(
+                color:Colors.blue,
+                child: new Text(
+                  "Discover More",
+                  style: new TextStyle(fontSize: 20.0, color: Colors.white),
+                ),
+                onPressed: () => Navigator.push(
                 context,
                 CupertinoPageRoute(
                   builder: (context) => VideoList(),
                 ),
-              ),
-              child: Container(
-                margin: EdgeInsets.all(50.0),
-                width: 160.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.blue,),
-                child: Center(
-                    child: Icon(Icons.add_circle,
-                      color: Colors.blueGrey,
-                    size: 50,)
                 ),
               ),
             )
