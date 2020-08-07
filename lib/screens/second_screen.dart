@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+
+import 'package:flutter_netflix_ui_redesign/models/movie_model.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 /// Creates list of video players
@@ -13,16 +15,17 @@ class VideoList extends StatefulWidget {
 
 
 class _VideoListState extends State<VideoList> {
-  final List<YoutubePlayerController> _controllers = [
-    'gQDByCdjUXw',
-    'iLnmTe5Q2Qw',
-    '_WoCV4c6XOE',
-    'KmzdUe0RSJo',
-    '6jZDSSZZxjQ',
-    'p2lYr3vM_1w',
-    '7QUtEmBT_-w',
-    '34_PXCzGw1M',
-  ]
+  
+  List<String> cont = [];
+
+  List<YoutubePlayerController> _controllers=[];
+
+  _VideoListState(){
+    for(var i = 0;i<videos.length;i++){
+      this.cont.add(YoutubePlayer.convertUrlToId(videos[i].videoUrl));
+    }
+    
+    this._controllers = cont
       .map<YoutubePlayerController>(
         (videoId) => YoutubePlayerController(
           initialVideoId: videoId,
@@ -32,6 +35,7 @@ class _VideoListState extends State<VideoList> {
         ),
       )
       .toList();
+  }
 
   @override
   Widget build(BuildContext context) {

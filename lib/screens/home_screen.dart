@@ -7,45 +7,15 @@ import 'package:flutter_netflix_ui_redesign/models/movie_model.dart';
 import 'package:flutter_netflix_ui_redesign/widgets/content_scroll.dart';
 import 'package:flutter_netflix_ui_redesign/screens/second_screen.dart';
 
-class YoutubePlayerDemoApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Youtube Player Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        appBarTheme: const AppBarTheme(
-          color: Colors.blueAccent,
-          textTheme: TextTheme(
-            headline6: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w300,
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-        iconTheme: const IconThemeData(
-          color: Colors.blueAccent,
-        ),
-      ),
-      home: HomeScreen(),
-    );
-  }
-}
-
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-
-
 class _HomeScreenState extends State<HomeScreen> {
-
   static String videoId = YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=Tz_FGheIDeQ");
+
   YoutubePlayerController _controller = YoutubePlayerController(
-    
     initialVideoId: videoId,
     flags: YoutubePlayerFlags(
         autoPlay: false,
@@ -107,19 +77,20 @@ class _HomeScreenState extends State<HomeScreen> {
               style: new TextStyle(fontSize: 20.0, color: Colors.white),
             ),
             SizedBox(height: 20.0),
+            
+            ContentScroll(
+              title: 'Online Lectures 2020-21',
+              imageHeight: 200.0,
+              imageWidth: 250.0,
+            ),
+            SizedBox(height: 20.0),
+            // SizedBox(height: 10.0),
             // ContentScroll(
-            //   images: myList,
-            //   title: 'Online Lectures 2020-21',
+            //   images: popular,
+            //   title: 'POPULAR',
             //   imageHeight: 150.0,
             //   imageWidth: 250.0,
             // ),
-            // SizedBox(height: 10.0),
-            ContentScroll(
-              images: popular,
-              title: 'POPULAR',
-              imageHeight: 150.0,
-              imageWidth: 250.0,
-            ),
             Container(
               alignment: Alignment.center,
               child: RaisedButton(

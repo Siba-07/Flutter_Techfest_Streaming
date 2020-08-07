@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_netflix_ui_redesign/models/movie_model.dart';
 
 class ContentScroll extends StatefulWidget {
-  final List<String> images;
+  final List<VideoInfo> vids = videos;
   final String title;
   final double imageHeight;
   final double imageWidth;
 
   ContentScroll({
-    this.images,
     this.title,
     this.imageHeight,
     this.imageWidth,
@@ -58,7 +58,7 @@ class _ContentScrollState extends State<ContentScroll> {
           child: ListView.builder(
             //padding: EdgeInsets.symmetric(horizontal: 30.0),
             scrollDirection: Axis.horizontal,
-            itemCount: widget.images.length,
+            itemCount: widget.vids.length,
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 margin: EdgeInsets.symmetric(
@@ -74,7 +74,7 @@ class _ContentScrollState extends State<ContentScroll> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
                     child: Image(
-                      image: AssetImage(widget.images[index]),
+                      image: AssetImage(widget.vids[index].imageUrl),
                       fit: BoxFit.cover,
                     ),
                   ),
