@@ -25,13 +25,6 @@ class _ContentScrollState extends State<ContentScroll> {
   Widget build(BuildContext context) {
     return Column(
        children: <Widget>[
-
-        Text(
-            "POPULAR VIDEOS",
-            textAlign: TextAlign.left,
-            style: new TextStyle(fontSize: 20.0, color: Colors.white),
-        ),
-        
         Container(
           height: widget.imageHeight,
           child: ListView.builder(
@@ -53,12 +46,8 @@ class _ContentScrollState extends State<ContentScroll> {
                     context,
                     CupertinoPageRoute(builder: (context,) => YTScreen(ind:index,)),
                   ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15.0),
-                    child: Image(
+                  child: Image(
                       image: AssetImage(widget.vids[index].imageUrl),
-                      fit: BoxFit.cover,
-                    ),
                   ),
                 ),
               );

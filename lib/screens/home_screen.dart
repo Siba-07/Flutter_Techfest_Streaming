@@ -70,30 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 FullScreenButton(),
               ],
             ),
-              
-            // Padding(
-            //   padding: const EdgeInsets.all(12.0),
-            //   child: Row(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: <Widget>[
-            //       Expanded(child: Icon(Icons.account_circle, size: 40.0,), flex: 2,),
-            //       Expanded(
-            //         child: Column(
-            //           children: <Widget>[
-            //             Padding(
-            //               padding: const EdgeInsets.only(bottom: 4.0),
-            //               child: Text(videos[0].videoTitle, style: TextStyle(fontSize: 18.0),),
-            //             ),
-            //             Text(videos[0].videoAuthor, style: TextStyle(color: Colors.black54),)
-            //           ],
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //         ),
-            //         flex: 9,
-            //       ),
-            //       Expanded(child: Icon(Icons.more_vert), flex: 1,),
-            //     ],
-            //   ),
-            // ),
             // SizedBox(height: 10.0,),
             // Text(
             //   "Welcome to Youtube video 1",
@@ -102,6 +78,12 @@ class _HomeScreenState extends State<HomeScreen> {
             // ),
             SizedBox(height: 20.0),
             SizedBox(height: 20.0),
+            Text(
+            "POPULAR VIDEOS",
+            textAlign: TextAlign.left,
+            style: new TextStyle(fontSize: 20.0, color: Colors.white,fontWeight: FontWeight.bold),
+
+            ),
             ContentScroll(
               title: '',
               imageHeight: 200.0,
