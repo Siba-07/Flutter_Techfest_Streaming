@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter_netflix_ui_redesign/models/movie_model.dart';
+import 'package:flutter_netflix_ui_redesign/screens/ytscreen.dart';
 
 class ContentScroll extends StatefulWidget {
   final List<VideoInfo> vids = videos;
@@ -21,32 +24,8 @@ class _ContentScrollState extends State<ContentScroll> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
-        // Padding(
-        //   padding: EdgeInsets.symmetric(horizontal: 40.0),
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //     children: <Widget>[
-        //       Text(
-        //         widget.title,
-        //         style: TextStyle(
-        //           fontSize: 30.0,
-        //           color: Colors.white,
-        //           fontWeight: FontWeight.w600,
-        //         ),
-        //       ),
-        //       GestureDetector(
-        //         onTap: () => print('View ${widget.title}'),
-        //         child: Icon(
-        //           Icons.arrow_forward,
-        //           color: Colors.black,
-        //           size: 30.0,
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
-        
+       children: <Widget>[
+
         Text(
             "POPULAR VIDEOS",
             textAlign: TextAlign.left,
@@ -70,7 +49,10 @@ class _ContentScrollState extends State<ContentScroll> {
                   borderRadius: BorderRadius.circular(15.0),
                 ),
                 child: RaisedButton(
-                  onPressed: () { print(index); },
+                  onPressed: () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(builder: (context,) => YTScreen(ind:index,)),
+                  ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
                     child: Image(
@@ -83,7 +65,7 @@ class _ContentScrollState extends State<ContentScroll> {
             },
           ),
         ),
-      ],
-    );
+       ],
+      );
   }
 }
