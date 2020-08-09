@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter_netflix_ui_redesign/models/movie_model.dart';
 import 'package:flutter_netflix_ui_redesign/screens/ytscreen.dart';
 
