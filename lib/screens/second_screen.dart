@@ -78,7 +78,7 @@ class _VideoListState extends State<VideoList> {
                     title[index],
                     style: TextStyle(
                       color: Colors.lightBlue,
-                      fontSize: 12,
+                      fontSize: 19,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
