@@ -13,6 +13,7 @@ class VideoInfo {
     this.imageUrl,
     this.description
   });
+}
 
 final List<VideoInfo> videos = [
   VideoInfo(
