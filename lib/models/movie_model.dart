@@ -12,38 +12,8 @@ class VideoInfo {
     this.videoTitle,
     this.imageUrl,
     this.description
-    });
-
-  /*factory VideoInfo.fromJson(dynamic json) {
-    return VideoInfo(
-      videoAuthor: json['videoAuthor'] as String,
-      videoUrl: json['videoUrl'] as String,
-      imageUrl: json['imageUrl'] as String,
-      description: json['description'] as String,
-    );
-  }*/
+  });
 }
-
-/*class Tutorial {
-
-  List <VideoInfo> tags;
-
-  Tutorial([this.tags]);
-
-  factory Tutorial.fromJson(dynamic json) {
-    if (json != null) {
-      var tagObjsJson = json['tags'] as List;
-      List<VideoInfo> _tags = tagObjsJson.map((tagJson) =>
-          VideoInfo.fromJson(tagJson)).toList();
-      return Tutorial(
-          _tags
-      );
-    }
-    else {
-      return Tutorial();
-    }
-  }
-}*/
 
 final List<VideoInfo> videos = [
   VideoInfo(
